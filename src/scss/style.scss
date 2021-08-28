@@ -68,11 +68,8 @@ body{font-family: 'Lato', sans-serif;}
         display: flex;
         align-items: center;
         cursor: pointer;
-        &:hover .drop {
-            display: flex;
-            flex-direction: column;
-            max-height: 530px;
-            overflow-y: auto;
+        &:hover{
+            color:$color-pink;
         }
     }
 
@@ -299,7 +296,7 @@ body{font-family: 'Lato', sans-serif;}
     }
 
     &__flex{
-        width: 235px;
+        width: 225px;
         margin-right: 46px;
         &:last-of-type{
             margin-right: 0;
@@ -343,6 +340,10 @@ body{font-family: 'Lato', sans-serif;}
             top: -6px;
             left: 48px;
         }
+        display: flex;
+            flex-direction: column;
+            max-height: 530px;
+            overflow-y: auto;
         
     }
 }
@@ -950,6 +951,10 @@ body{font-family: 'Lato', sans-serif;}
         margin-bottom: 20px;
     }
 
+    &__category[open] > .sidebar__title::after{
+        content: '\25B2';
+    }
+
     &__title {
         border-bottom: 1px solid #ebebeb;
         border-left: 5px solid $color-pink;
@@ -971,14 +976,14 @@ body{font-family: 'Lato', sans-serif;}
         &:hover{
             color: $color-pink;
         }
-    }
-
-    &__drop {
-        padding-left: 12px;
+        &::after{
+            content: '\25BC';
+        }
     }
 
     &__li {
         margin-bottom: 20px;
+        padding-left: 12px;
     }
 
     &__link {
@@ -1303,6 +1308,7 @@ body{font-family: 'Lato', sans-serif;}
     &__item {
         border-bottom: 1px solid #e8e8e8;
         padding: 0 34px;
+        
     }
 
     &__title {
@@ -1311,7 +1317,13 @@ body{font-family: 'Lato', sans-serif;}
         font-weight: 700;
         text-transform: uppercase;
         color: #222222; 
-        padding: 34px 0;       
+        padding: 34px 0;   
+        cursor: pointer;    
+        outline: none;
+        list-style-type: none;
+        &:hover{
+            color: $color-pink;
+        }
     }
 
     &__container {
@@ -1398,7 +1410,8 @@ body{font-family: 'Lato', sans-serif;}
         cursor: pointer;
         margin-top: 30px;
         &:hover{
-            background-color:#eaeaea;
+            color:$color-pink;
+            border-color: $color-pink;
         }
     }
 
@@ -1640,6 +1653,7 @@ body{font-family: 'Lato', sans-serif;}
         text-align: center; 
         margin-top: 17px;
         cursor: pointer;
+        display: block;
         &:hover{
             background-color: #ca4053;
         }
